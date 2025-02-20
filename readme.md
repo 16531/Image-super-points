@@ -24,3 +24,9 @@ result中的carn，ctb，eca+unet等都是不同的对比方法  其中的子文
 def import_module(name):
     return importlib.import_module(name)  #动态导入模块：import_module():返回指定的包或模块。
 importlib是系统写好的包  可以查看它的用法从而知道它的用法
+来看看我的结果吧：
+![image](https://github.com/user-attachments/assets/024f8ecf-4348-4d4b-ab75-db08cc7fb80f)
+![image](https://github.com/user-attachments/assets/264f85ba-2908-461b-88ad-cd8b5e357594)
+![image](https://github.com/user-attachments/assets/9fe75e45-8d49-4165-a45e-464da80c1f03)
+
+

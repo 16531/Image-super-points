@@ -1,0 +1,36 @@
+#### train ####
+model: 'elan'
+## parameters for plain
+scale: 4
+rgb_range: 255
+colors: 3
+m_elan: 24
+c_elan: 60
+n_share: 1
+r_expand: 2
+act_type: 'relu'
+window_sizes: [4, 8, 16]
+pretrain: ~  #'./pretrain/conv/model_x4_500.pt'
+
+## parameters for model training
+patch_size: 256
+batch_size: 16 #64
+data_repeat: 1  #80
+data_augment: 1
+
+epochs: 500
+lr: 0.0002
+decays: [250, 400, 425, 450, 475]  #[250, 400, 450, 475, 500]
+gamma: 0.5
+log_every: 100
+test_every: 10  #1
+log_path: "./experiment"
+log_name: "results"
+
+## hardware specification
+gpu_ids: [0,1]
+threads: 8  #8
+
+## data specification
+data_path: './SR_datasets'
+eval_sets: ['AID', 'WHU-RS19']

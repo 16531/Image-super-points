@@ -1,0 +1,35 @@
+model: 'elan'
+## parameters for plain
+scale: 4
+rgb_range: 255
+colors: 3
+m_elan: 24
+c_elan: 64
+n_share: 1
+r_expand: 2
+act_type: 'relu'
+window_sizes: [4, 8, 16]
+pretrain: 'D:\Desktop\code\xiaodan\experiment\net4_dconv-2024-0927-0954\models\model_x4_43.pt'
+
+## parameters for model training
+patch_size: 256
+batch_size: 8 #64
+data_repeat: 1  #10   #80
+data_augment: 1
+
+epochs: 500
+lr: 0.0002
+decays: [200, 350, 450]  #[150, 250, 450]   #  [200, 300, 400, 450, 475]  #[250, 400, 450, 475, 500]
+gamma: 0.5
+log_every: 100
+test_every: 1  #1
+log_path: "./experiment"
+log_name: "ska"
+
+## hardware specification
+gpu_ids: [0]
+threads: 16  #16
+
+## data specification
+data_path: './SR_datasets'
+eval_sets: ['test']    #, 'AID', 'WHU-RS19'
